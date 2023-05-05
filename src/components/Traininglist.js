@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ReactTable } from "react-table";
+import ReactTable from "./ReactTable";
 
 export default function Traininglist() {
   const [trainings, setTrainings] = useState([]);
@@ -12,14 +12,15 @@ export default function Traininglist() {
     fetch("http://traineeapp.azurewebsites.net/api/trainings")
       .then((response) => response.json())
       .then((data) => {
-        const formattedTrainings = data.content.trainings.map((training) => {
+        console.log("trainings",data)
+        const formattedTrainings = data.content.map((training) => {
           return {
             id: training.id,
             date: new Date(training.date),
             duration: training.duration,
             activity: training.activity,
-            customer:
-              training.customer.firstname + " " + training.customer.lastname,
+            // customer:
+            //   training.customer.firstname + " " + training.customer.lastname,
           };
         });
         setTrainings(formattedTrainings);
@@ -27,10 +28,10 @@ export default function Traininglist() {
   };
 
   const columns = [
-    {
-      Header: "Date",
-      accessor: "date",
-    },
+    // {
+    //   Header: "Date",
+    //   accessor: "date",
+    // },
     {
       Header: "Duration",
       accessor: "duration",
