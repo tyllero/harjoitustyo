@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ReactTable from "react-table";
+import {ReactTable} from "react-table";
 import { format } from "date-fns"; // tuo date-fns-kirjasto päivämäärän muotoilua varten
 
 export default function Customerlist() {

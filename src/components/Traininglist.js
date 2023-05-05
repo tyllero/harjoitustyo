@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { reactTable } from "react-table";
+import { ReactTable } from "react-table";
 
 export default function Traininglist() {
   const [trainings, setTrainings] = useState([]);
@@ -45,5 +45,5 @@ export default function Traininglist() {
     },
   ];
 
-  return <reactTable data={trainings} columns={columns} />;
+  return <ReactTable data={trainings} columns={columns} />;
 }
